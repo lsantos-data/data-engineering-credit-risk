@@ -1,0 +1,70 @@
+# ==== Python ====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter / Databricks notebook checkpoints
+.ipynb_checkpoints/
+.databricks/
+*.dbc
+
+# ==== AWS credentials & config ====
+.aws/
+aws.config
+credentials
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+
+# ==== Databricks ====
+.databrickscfg
+databricks.yml.local
+.bundle/
+
+# ==== Data files (não versionar dados brutos/grandes) ====
+data/raw/
+data/bronze/
+data/silver/
+data/gold/
+data/*.csv
+data/*.tsv
+data/*.json
+data/*.parquet
+data/*.zip
+data/*.gz
+*.csv
+*.tsv
+*.parquet
+*.avro
+*.orc
+!sql/**/*.csv
+
+# ==== IDE / OS ====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==== Logs ====
+*.log
+logs/
+
+# ==== Power BI ====
+*.pbix.bak
