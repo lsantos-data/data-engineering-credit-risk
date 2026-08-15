@@ -40,7 +40,7 @@ Projeto de portfólio focado em demonstrar práticas de engenharia de dados apli
 | **Orquestração** | Databricks Lakeflow Jobs |
 | **Linguagem** | Python (PySpark) + SQL |
 | **Secrets Management** | Databricks Secrets |
-| **Visualização** | Power BI (em desenvolvimento) |
+| **Visualização** | Power BI ([dashboard executivo](docs/dashboard.html) + [medidas DAX](docs/dax_measures.md)) |
 | **Versionamento** | Git / GitHub |
 
 ---
@@ -182,6 +182,7 @@ O projeto é executado no **Databricks Free Edition**, o que impõe algumas rest
 - **Compute exclusivamente Serverless** — não é possível provisionar clusters customizados
 - **Configurações `fs.s3a` bloqueadas** — acesso ao S3 é feito via `boto3` em vez de Spark nativo
 - **Retries limitados a 20** e alguns recursos avançados de Unity Catalog (column masking, row filters) não disponíveis no free tier
+- **`gold_dim_date` cobre apenas 15 datas** (jan–dez/2015 e jan–mar/2018), não o período 2007–2018 completo — achado ao validar o dashboard, ver [docs/dax_measures.md](docs/dax_measures.md#2-gold_dim_date-não-cobre-2007–2018). Qualquer leitura de tendência multi-ano a partir do Gold atual precisa dessa ressalva.
 
 Em ambiente de produção, todas essas limitações seriam eliminadas com plano Premium/Enterprise.
 
@@ -262,7 +263,7 @@ Importar os notebooks no workspace do Databricks, criar o Job com as 4 tasks enc
 
 ## 📝 Próximos Passos
 
-- [ ] Dashboard executivo em Power BI consumindo a camada Gold
+- [x] Dashboard executivo em Power BI consumindo a camada Gold
 - [ ] Migração para estrutura Unity Catalog (`catalog.schema.table`)
 - [ ] Implementação de column masking para colunas sensíveis (PII)
 - [ ] CI/CD via GitHub Actions para deploy automatizado de notebooks
