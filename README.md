@@ -115,7 +115,7 @@ bronze_ingestion → silver_transformation → gold_star_schema → data_quality
 
 | Task | Retries | Justificativa |
 |---|---|---|
-| `bronze_ingestion` | 3 | Ingestão sofre falhas transitórias de rede/API |
+| `bronze_ingestion` | 2 | Ingestão sofre falhas transitórias de rede/API |
 | `silver_transformation` | 1 | Transformação é determinística — retry ajuda pouco |
 | `gold_star_schema` | 1 | Mesma lógica do Silver |
 | `data_quality_checks` | 0 | Falha em teste é problema real, retry mascara |
@@ -168,8 +168,8 @@ Usuário IAM dedicado (`databricks-s3-user`) com policy customizada de menor pri
 | Bronze | `bronze_lending_club` | 500.000 | 151 |
 | Silver | `silver_lending_club` | 499.998 | 34 |
 | Gold | `gold_fact_loan` | 499.998 | 13 |
-| Gold | `gold_dim_borrower` | 499.998 | 12 |
-| Gold | `gold_dim_loan` | 499.998 | 5 |
+| Gold | `gold_dim_borrower` | 499.998 | 13 |
+| Gold | `gold_dim_loan` | 499.998 | 6 |
 | Gold | `gold_dim_date` | 15 | 8 |
 
 ---
