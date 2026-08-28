@@ -54,7 +54,7 @@ nulos.show(vertical=True)
 
 # COMMAND ----------
 
-from pyspark.sql.functions import when, median
+from pyspark.sql.functions import when
 
 # Tratar valores nulos
 df_silver = df_silver \

@@ -200,7 +200,8 @@ data-engineering-credit-risk/
 ├── orchestration/
 │   └── lakeflow_job_definition.json
 ├── docs/
-│   └── architecture_diagram.png
+│   ├── dashboard.html
+│   └── dax_measures.md
 └── README.md
 ```
 
